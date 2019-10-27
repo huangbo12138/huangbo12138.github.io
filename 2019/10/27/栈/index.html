@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpg?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpg?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpg?v=7.4.0">
+  <link rel="mask-icon" href="/images/header.jpg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="关于栈的建立，入栈，出栈，遍历，清空等操作12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394">
+<meta property="og:type" content="article">
+<meta property="og:title" content="栈">
+<meta property="og:url" content="https://huangbo12138.github.io/2019/10/27/栈/index.html">
+<meta property="og:site_name" content="成长之路">
+<meta property="og:description" content="关于栈的建立，入栈，出栈，遍历，清空等操作12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-27T09:59:53.380Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="栈">
+<meta name="twitter:description" content="关于栈的建立，入栈，出栈，遍历，清空等操作12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394">
+  <link rel="canonical" href="https://huangbo12138.github.io/2019/10/27/栈/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>栈 | 成长之路</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">成长之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">学习ing</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">4</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://huangbo12138.github.io/2019/10/27/栈/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄波">
+      <meta itemprop="description" content="知行合一，经世致用">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="成长之路">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">栈
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-27 17:52:26 / 修改时间：17:59:53" itemprop="dateCreated datePublished" datetime="2019-10-27T17:52:26+08:00">2019-10-27</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="关于栈的建立，入栈，出栈，遍历，清空等操作"><a href="#关于栈的建立，入栈，出栈，遍历，清空等操作" class="headerlink" title="关于栈的建立，入栈，出栈，遍历，清空等操作"></a>关于栈的建立，入栈，出栈，遍历，清空等操作</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;<span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> * <span class="title">pNext</span>;</span></span><br><span class="line">&#125;NODE,*PNODE;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Stack</span>&#123;</span></span><br><span class="line">    PNODE pTop;<span class="comment">//指向栈的顶部节点</span></span><br><span class="line">    PNODE pBottom;<span class="comment">//指向栈的底部节点</span></span><br><span class="line">&#125;STACK,* PSTACK;</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(PSTACK)</span></span>;<span class="comment">//初始化一个空栈，使pTop和pBottom都指向头结点</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(PSTACK,<span class="keyword">int</span>)</span></span>;<span class="comment">//存元素，压栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(PSTACK)</span></span>;<span class="comment">//遍历</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pop</span><span class="params">(PSTACK,<span class="keyword">int</span> *)</span></span>;<span class="comment">//出栈并且返回出栈元素，还要判断出栈是否成功</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">(PSTACK)</span></span>;<span class="comment">//判断栈是否为空</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(PSTACK)</span></span>;<span class="comment">//清空数据</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    STACK S;<span class="comment">//等价于struct Stack S,分配一块内存空间名为S</span></span><br><span class="line">          <span class="comment">//里面有pTop和pBottom，暂时是垃圾值</span></span><br><span class="line">   <span class="keyword">int</span> val;       </span><br><span class="line">    </span><br><span class="line">    init(&amp;S);<span class="comment">//初始化一个空栈，使pTop和pBottom都指向头结点</span></span><br><span class="line">    push(&amp;S,<span class="number">1</span>);<span class="comment">//存元素，压栈</span></span><br><span class="line">     push(&amp;S,<span class="number">2</span>);<span class="comment">//存元素，压栈     </span></span><br><span class="line">    traverse(&amp;S);<span class="comment">//遍历</span></span><br><span class="line">    clear(&amp;S);<span class="comment">//清空</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(pop(&amp;s,&amp;val))&#123;<span class="comment">//删元素，出栈</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"出栈成功，出栈元素的是%d\n"</span>,val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"出栈失败"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(PSTACK pS)</span></span>&#123;</span><br><span class="line">    pS-&gt;pTop = (PNODE)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(pS-&gt;pTop==<span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"动态内存分配失败"</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);<span class="comment">//程序终止</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        pS-&gt;pBottom=pS-&gt;pTop;<span class="comment">//空栈情况下，栈顶和栈底都指向同一个地址</span></span><br><span class="line">        <span class="comment">//即最后一个有效节点的下一个节点</span></span><br><span class="line">        pS-&gt;pTop-&gt;pNext=<span class="literal">NULL</span>;<span class="comment">//pS-&gt;pBottom-&gt;pNext==NULL</span></span><br><span class="line">        <span class="comment">//pS的成员pTop指向的头结点的指针域为空</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(PSTACK pS,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    PNODE pNew = (PNODE)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));<span class="comment">//创建新结点</span></span><br><span class="line">    pNew-&gt;data = val;</span><br><span class="line">    pNew-&gt;pNext = pS-&gt;pTop;<span class="comment">//使新节点的指针域指向原来的栈顶节点，</span></span><br><span class="line">                           <span class="comment">//不能是ps-&gt;pBottom</span></span><br><span class="line">    pS-&gt;pTop = pNew;<span class="comment">//使栈顶指向新节点地址</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(PSTACK pS)</span></span>&#123;</span><br><span class="line">    PNODE p = pS-&gt;PTop;<span class="comment">//临时指针指向栈顶</span></span><br><span class="line">    <span class="keyword">while</span>(p != pS-&gt;pBototm)&#123;<span class="comment">//若p还没有栈底pBottom，则遍历输出</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,p-&gt;data);<span class="comment">//从栈顶开始输出</span></span><br><span class="line">        p=p-&gt;pNext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">(PSTACK pS)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pS-&gt;pTop == pS-&gt;pBottom) <span class="keyword">return</span> <span class="literal">true</span>;<span class="comment">//当栈底和栈顶指向同一块地址，为空栈</span></span><br><span class="line">    esle <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//把pS所指向的栈出栈一次，并把出栈的元素存入val形参所指向的变量中，</span></span><br><span class="line"><span class="comment">//出栈成功返回true,失败返回false</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pop</span><span class="params">(PSTACK pS,<span class="keyword">int</span> * val)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(empty(pS)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    els&#123;</span><br><span class="line">        *val = pS-&gt;data;<span class="comment">//主函数里输出出栈元素</span></span><br><span class="line">        PNODE r = pS-&gt;pTop;<span class="comment">//临时指针r指向出栈元素位置：栈顶，方便最后释放内存</span></span><br><span class="line">        ps-&gt;pTop = r-&gt;pNext;<span class="comment">//栈顶指针指向原来栈顶的下一个节点地址</span></span><br><span class="line">        <span class="built_in">free</span>(r);</span><br><span class="line">        r = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(PSTACK pS)</span></span>&#123;<span class="comment">//清空数据,最终使栈顶和栈底指向同一个地址</span></span><br><span class="line">        <span class="keyword">if</span>(empty(pS))&#123;<span class="comment">//如果栈本身为空，不需要清空</span></span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            PNODE p = pS-&gt;pTop;<span class="comment">//临时指针P指向栈顶</span></span><br><span class="line">            PNODE q = <span class="literal">NULL</span>;<span class="comment">//临时指针q暂时设为NULL</span></span><br><span class="line">            <span class="keyword">while</span>(p != pS-&gt;pBottom)&#123;<span class="comment">//当栈顶指针不指向栈底时，栈不为空</span></span><br><span class="line">                q = p-&gt;pNext;<span class="comment">//临时指针q指向下一个节点</span></span><br><span class="line">                <span class="built_in">free</span>(p);<span class="comment">//释放p的内存</span></span><br><span class="line">                p = q;<span class="comment">//再使p指向下一节点地址</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    pS-&gt;pTop = pS-&gt;pBottom;<span class="comment">//最后数据全部清空，栈顶和栈底指向同一个地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/26/删除有序链表的重复数字2/" rel="next" title="删除有序链表的重复数字2">
+                  <i class="fa fa-chevron-left"></i> 删除有序链表的重复数字2
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/27/有效的括号/" rel="prev" title="有效的括号">
+                  有效的括号 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于栈的建立，入栈，出栈，遍历，清空等操作"><span class="nav-number">1.</span> <span class="nav-text">关于栈的建立，入栈，出栈，遍历，清空等操作</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/header.jpg"
+      alt="黄波">
+  <p class="site-author-name" itemprop="name">黄波</p>
+  <div class="site-description" itemprop="description">知行合一，经世致用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄波</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+    
+  
+  <script color='0,0,0' opacity='0.5' zIndex='-1' count='150' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
