@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="二叉树的前序遍历示例:  12345678输入: [1,null,2,3]     1    \     2    /   3 输出: [1,2,3]  解答1(递归)123456789101112131415161718class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#12">
+  <meta name="description" content="给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。实例123给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 n = 2.当删除了倒数第二个节点后，链表变为 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.  解法1(直接) : 将链表长度求出，通过节点关系删除相应节点。 123456789101112131415161718public ListNode remo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树的遍历">
-<meta property="og:url" content="https://huangbo12138.github.io/2019/10/30/二叉树的遍历/index.html">
+<meta property="og:title" content="删除链表倒数第n个节点">
+<meta property="og:url" content="https://huangbo12138.github.io/2019/10/30/删除链表倒数第n个节点/index.html">
 <meta property="og:site_name" content="成长之路">
-<meta property="og:description" content="二叉树的前序遍历示例:  12345678输入: [1,null,2,3]     1    \     2    /   3 输出: [1,2,3]  解答1(递归)123456789101112131415161718class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#12">
+<meta property="og:description" content="给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。实例123给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 n = 2.当删除了倒数第二个节点后，链表变为 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.  解法1(直接) : 将链表长度求出，通过节点关系删除相应节点。 123456789101112131415161718public ListNode remo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-30T15:28:31.565Z">
+<meta property="og:updated_time" content="2019-10-30T15:38:30.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二叉树的遍历">
-<meta name="twitter:description" content="二叉树的前序遍历示例:  12345678输入: [1,null,2,3]     1    \     2    /   3 输出: [1,2,3]  解答1(递归)123456789101112131415161718class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#12">
-  <link rel="canonical" href="https://huangbo12138.github.io/2019/10/30/二叉树的遍历/">
+<meta name="twitter:title" content="删除链表倒数第n个节点">
+<meta name="twitter:description" content="给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。实例123给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 n = 2.当删除了倒数第二个节点后，链表变为 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.  解法1(直接) : 将链表长度求出，通过节点关系删除相应节点。 123456789101112131415161718public ListNode remo">
+  <link rel="canonical" href="https://huangbo12138.github.io/2019/10/30/删除链表倒数第n个节点/">
 
 
 <script id="page-configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>二叉树的遍历 | 成长之路</title>
+  <title>删除链表倒数第n个节点 | 成长之路</title>
   
 
 
@@ -259,7 +259,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://huangbo12138.github.io/2019/10/30/二叉树的遍历/">
+    <link itemprop="mainEntityOfPage" href="https://huangbo12138.github.io/2019/10/30/删除链表倒数第n个节点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄波">
@@ -271,7 +271,7 @@
       <meta itemprop="name" content="成长之路">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">二叉树的遍历
+        <h1 class="post-title" itemprop="name headline">删除链表倒数第n个节点
 
           
         </h1>
@@ -287,7 +287,7 @@
                 
               
 
-              <time title="创建时间：2019-10-30 23:27:32 / 修改时间：23:28:31" itemprop="dateCreated datePublished" datetime="2019-10-30T23:27:32+08:00">2019-10-30</time>
+              <time title="创建时间：2019-10-30 23:37:33 / 修改时间：23:38:30" itemprop="dateCreated datePublished" datetime="2019-10-30T23:37:33+08:00">2019-10-30</time>
             </span>
           
             
@@ -319,12 +319,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="二叉树的前序遍历"><a href="#二叉树的前序遍历" class="headerlink" title="二叉树的前序遍历"></a>二叉树的前序遍历</h3><p>示例: </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">1</span>,null,<span class="number">2</span>,<span class="number">3</span>]  </span><br><span class="line">   <span class="number">1</span></span><br><span class="line">    \</span><br><span class="line">     <span class="number">2</span></span><br><span class="line">    /</span><br><span class="line">   <span class="number">3</span> </span><br><span class="line"></span><br><span class="line">输出: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+        <h3 id="给定一个链表，删除链表的倒数第-n-个节点，并且返回链表的头结点。"><a href="#给定一个链表，删除链表的倒数第-n-个节点，并且返回链表的头结点。" class="headerlink" title="给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。"></a>给定一个链表，删除链表的倒数第 <em>n</em> 个节点，并且返回链表的头结点。</h3><h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定一个链表: <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span>, 和 n = <span class="number">2.</span></span><br><span class="line"></span><br><span class="line">当删除了倒数第二个节点后，链表变为 <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">5.</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="解答1-递归"><a href="#解答1-递归" class="headerlink" title="解答1(递归)"></a>解答1(递归)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        helper(root,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode root,List&lt;Integer&gt; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root != <span class="keyword">null</span>)&#123;</span><br><span class="line">            res.add(root.val);<span class="comment">//先输出节点的值</span></span><br><span class="line">            <span class="keyword">if</span>(root.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">                helper(root.left,res);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(root.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">                helper(root.right,res);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解法1(直接) : 将链表长度求出，通过节点关系删除相应节点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    dummy.next = head;</span><br><span class="line">    <span class="keyword">int</span> length  = <span class="number">0</span>;</span><br><span class="line">    ListNode first = head;</span><br><span class="line">    <span class="keyword">while</span> (first != <span class="keyword">null</span>) &#123;</span><br><span class="line">        length++;</span><br><span class="line">        first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line">    length -= n;</span><br><span class="line">    first = dummy;</span><br><span class="line">    <span class="keyword">while</span> (length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        length--;</span><br><span class="line">        first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line">    first.next = first.next.next;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="解答2-DFS深度优先遍历"><a href="#解答2-DFS深度优先遍历" class="headerlink" title="解答2(DFS深度优先遍历)"></a>解答2(DFS深度优先遍历)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    LinkedList&lt;TreeNode&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    LinkedList&lt;Integer&gt; output = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    stack.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;<span class="comment">//因为开始就会放入根节点的左右字树节点，所以直到最后为空才完成遍历</span></span><br><span class="line">      TreeNode node = stack.pollLast();<span class="comment">//返回栈顶的值并从栈中删除节点</span></span><br><span class="line">      output.add(node.val);<span class="comment">//在集合中加入这个值</span></span><br><span class="line">      <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">        stack.add(node.right);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">        stack.add(node.left);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> output;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解法2(巧妙): 设两个指针，指在哑节点上。让第一个节点先移动至与第二个节点相隔两个节点处。再同时移动，至第一个节点为空。这时候，第二个节点正好在需要删除节点的前一个节点处。执行s.next = s.next.next;操作即可删除节点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    ListNode pre = <span class="keyword">new</span> ListNode(<span class="number">0</span>);<span class="comment">//定义一个哑节点</span></span><br><span class="line">    pre.next = head;</span><br><span class="line">    ListNode first = pre;</span><br><span class="line">    ListNode second = pre;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;= n+<span class="number">1</span>;i++)&#123;</span><br><span class="line">        first = first.next ;<span class="comment">//让他和第二个节点间隔两个节点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(first != <span class="keyword">null</span>)&#123;</span><br><span class="line">        first = first.next;</span><br><span class="line">        second = second.next;<span class="comment">//同时前进</span></span><br><span class="line">    &#125;</span><br><span class="line">    second.next = second.next.next;<span class="comment">//删除操作</span></span><br><span class="line">    <span class="keyword">return</span> pre.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -342,8 +343,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/30/Spring整合Mybatis-二/" rel="next" title="Spring整合Mybatis(二)">
-                  <i class="fa fa-chevron-left"></i> Spring整合Mybatis(二)
+                <a href="/2019/10/30/二叉树/" rel="next" title="二叉树">
+                  <i class="fa fa-chevron-left"></i> 二叉树
                 </a>
               
             </div>
@@ -351,10 +352,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/30/二叉树/" rel="prev" title="二叉树">
-                  二叉树 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -403,7 +400,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树的前序遍历"><span class="nav-number">1.</span> <span class="nav-text">二叉树的前序遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解答1-递归"><span class="nav-number">1.1.</span> <span class="nav-text">解答1(递归)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解答2-DFS深度优先遍历"><span class="nav-number">1.2.</span> <span class="nav-text">解答2(DFS深度优先遍历)</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#给定一个链表，删除链表的倒数第-n-个节点，并且返回链表的头结点。"><span class="nav-number">1.</span> <span class="nav-text">给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">1.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
