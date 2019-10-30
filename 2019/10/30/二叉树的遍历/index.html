@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="有效的括号12题目:给定一个只包括 &apos;(&apos;，&apos;)&apos;，&apos;&amp;#123;&apos;，&apos;&amp;#125;&apos;，&apos;[&apos;，&apos;]&apos; 的字符串，判断字符串是否有效。有效字符串需满足：左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。  解答: 1234567891011121314151617181920212223242526272829303132333435363738cla">
+  <meta name="description" content="二叉树的前序遍历示例:  12345678输入: [1,null,2,3]     1    \     2    /   3 输出: [1,2,3]  解答1(递归)123456789101112131415161718class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="有效的括号">
-<meta property="og:url" content="https://huangbo12138.github.io/2019/10/27/有效的括号/index.html">
+<meta property="og:title" content="二叉树的遍历">
+<meta property="og:url" content="https://huangbo12138.github.io/2019/10/30/二叉树的遍历/index.html">
 <meta property="og:site_name" content="成长之路">
-<meta property="og:description" content="有效的括号12题目:给定一个只包括 &apos;(&apos;，&apos;)&apos;，&apos;&amp;#123;&apos;，&apos;&amp;#125;&apos;，&apos;[&apos;，&apos;]&apos; 的字符串，判断字符串是否有效。有效字符串需满足：左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。  解答: 1234567891011121314151617181920212223242526272829303132333435363738cla">
+<meta property="og:description" content="二叉树的前序遍历示例:  12345678输入: [1,null,2,3]     1    \     2    /   3 输出: [1,2,3]  解答1(递归)123456789101112131415161718class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#12">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-27T09:56:12.674Z">
+<meta property="og:updated_time" content="2019-10-30T15:28:31.565Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="有效的括号">
-<meta name="twitter:description" content="有效的括号12题目:给定一个只包括 &apos;(&apos;，&apos;)&apos;，&apos;&amp;#123;&apos;，&apos;&amp;#125;&apos;，&apos;[&apos;，&apos;]&apos; 的字符串，判断字符串是否有效。有效字符串需满足：左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。  解答: 1234567891011121314151617181920212223242526272829303132333435363738cla">
-  <link rel="canonical" href="https://huangbo12138.github.io/2019/10/27/有效的括号/">
+<meta name="twitter:title" content="二叉树的遍历">
+<meta name="twitter:description" content="二叉树的前序遍历示例:  12345678输入: [1,null,2,3]     1    \     2    /   3 输出: [1,2,3]  解答1(递归)123456789101112131415161718class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#12">
+  <link rel="canonical" href="https://huangbo12138.github.io/2019/10/30/二叉树的遍历/">
 
 
 <script id="page-configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>有效的括号 | 成长之路</title>
+  <title>二叉树的遍历 | 成长之路</title>
   
 
 
@@ -259,7 +259,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://huangbo12138.github.io/2019/10/27/有效的括号/">
+    <link itemprop="mainEntityOfPage" href="https://huangbo12138.github.io/2019/10/30/二叉树的遍历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄波">
@@ -271,7 +271,7 @@
       <meta itemprop="name" content="成长之路">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">有效的括号
+        <h1 class="post-title" itemprop="name headline">二叉树的遍历
 
           
         </h1>
@@ -287,7 +287,7 @@
                 
               
 
-              <time title="创建时间：2019-10-27 17:54:37 / 修改时间：17:56:12" itemprop="dateCreated datePublished" datetime="2019-10-27T17:54:37+08:00">2019-10-27</time>
+              <time title="创建时间：2019-10-30 23:27:32 / 修改时间：23:28:31" itemprop="dateCreated datePublished" datetime="2019-10-30T23:27:32+08:00">2019-10-30</time>
             </span>
           
             
@@ -319,20 +319,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="有效的括号"><a href="#有效的括号" class="headerlink" title="有效的括号"></a>有效的括号</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">题目:给定一个只包括 <span class="string">'('</span>，<span class="string">')'</span>，<span class="string">'&#123;'</span>，<span class="string">'&#125;'</span>，<span class="string">'['</span>，<span class="string">']'</span> 的字符串，判断字符串是否有效。</span><br><span class="line">有效字符串需满足：左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。</span><br></pre></td></tr></table></figure>
+        <h3 id="二叉树的前序遍历"><a href="#二叉树的前序遍历" class="headerlink" title="二叉树的前序遍历"></a>二叉树的前序遍历</h3><p>示例: </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">1</span>,null,<span class="number">2</span>,<span class="number">3</span>]  </span><br><span class="line">   <span class="number">1</span></span><br><span class="line">    \</span><br><span class="line">     <span class="number">2</span></span><br><span class="line">    /</span><br><span class="line">   <span class="number">3</span> </span><br><span class="line"></span><br><span class="line">输出: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
 
-<p>解答:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> HashMap&lt;Character, Character&gt; mappings;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Solution</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.mappings = <span class="keyword">new</span> HashMap&lt;Character, Character&gt;();</span><br><span class="line">    <span class="keyword">this</span>.mappings.put(<span class="string">')'</span>, <span class="string">'('</span>);</span><br><span class="line">    <span class="keyword">this</span>.mappings.put(<span class="string">'&#125;'</span>, <span class="string">'&#123;'</span>);</span><br><span class="line">    <span class="keyword">this</span>.mappings.put(<span class="string">']'</span>, <span class="string">'['</span>);<span class="comment">//定义一个以kv形式存放左右括号的hashmap</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义一个字符栈</span></span><br><span class="line">    Stack&lt;Character&gt; stack = <span class="keyword">new</span> Stack&lt;Character&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">      <span class="keyword">char</span> c = s.charAt(i);<span class="comment">//取到每一个字符</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">//用c(value值左括号)来判定是属于左边的key值(右括号)，即若是右括号的操作</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.mappings.containsKey(c)) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 若是右边的字符，空栈就设为#，非空栈将栈顶元素出栈</span></span><br><span class="line">        <span class="keyword">char</span> topElement = stack.empty() ? <span class="string">'#'</span> : stack.pop();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判定栈顶符号与当前字符符号是否匹配</span></span><br><span class="line">        <span class="keyword">if</span> (topElement != <span class="keyword">this</span>.mappings.get(c)) &#123;<span class="comment">//判定是不是c对应的key值</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 遇到左边的就入栈</span></span><br><span class="line">        stack.push(c);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 空栈的话就是正确的</span></span><br><span class="line">    <span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">        &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="解答1-递归"><a href="#解答1-递归" class="headerlink" title="解答1(递归)"></a>解答1(递归)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        helper(root,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode root,List&lt;Integer&gt; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root != <span class="keyword">null</span>)&#123;</span><br><span class="line">            res.add(root.val);<span class="comment">//先输出节点的值</span></span><br><span class="line">            <span class="keyword">if</span>(root.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">                helper(root.left,res);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(root.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">                helper(root.right,res);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这道题考查了栈的应用。用一个hashmap来存放左右括号，遇到左括号进行入栈，遇到右括号出栈，判断所出的栈顶元素(左括号)与其对应的key(右括号)是否相等，如果相等的话，就继续，否则直接return false。当栈为空即所有左括号顺利出栈(找到心仪对象)就是有效的括号，反之则不是。</p>
-<p>举例: ( ( ) ]</p>
-<p>执行操作: </p>
-<ul>
-<li>遇到左括号入栈，栈顶指针指向（</li>
-<li>遇到左括号入栈，栈顶指针指向（</li>
-<li>遇到右括号），栈非空(栈顶指针与栈底指针指向不同)则取出栈顶指针元素(与)对应的key值是否相等,相等则继续</li>
-<li>遇到右括号]，栈非空(栈顶指针与栈底指针指向不同)则取出栈顶指针元素(与]对应的key[不等，返回false</li>
-</ul>
+<h4 id="解答2-DFS深度优先遍历"><a href="#解答2-DFS深度优先遍历" class="headerlink" title="解答2(DFS深度优先遍历)"></a>解答2(DFS深度优先遍历)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    LinkedList&lt;TreeNode&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    LinkedList&lt;Integer&gt; output = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    stack.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;<span class="comment">//因为开始就会放入根节点的左右字树节点，所以直到最后为空才完成遍历</span></span><br><span class="line">      TreeNode node = stack.pollLast();<span class="comment">//返回栈顶的值并从栈中删除节点</span></span><br><span class="line">      output.add(node.val);<span class="comment">//在集合中加入这个值</span></span><br><span class="line">      <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">        stack.add(node.right);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">        stack.add(node.left);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> output;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -349,8 +342,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/27/栈/" rel="next" title="栈">
-                  <i class="fa fa-chevron-left"></i> 栈
+                <a href="/2019/10/30/Spring整合Mybatis-二/" rel="next" title="Spring整合Mybatis(二)">
+                  <i class="fa fa-chevron-left"></i> Spring整合Mybatis(二)
                 </a>
               
             </div>
@@ -358,10 +351,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/30/单链表/" rel="prev" title="单链表">
-                  单链表 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -410,7 +399,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#有效的括号"><span class="nav-number">1.</span> <span class="nav-text">有效的括号</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树的前序遍历"><span class="nav-number">1.</span> <span class="nav-text">二叉树的前序遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解答1-递归"><span class="nav-number">1.1.</span> <span class="nav-text">解答1(递归)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解答2-DFS深度优先遍历"><span class="nav-number">1.2.</span> <span class="nav-text">解答2(DFS深度优先遍历)</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
